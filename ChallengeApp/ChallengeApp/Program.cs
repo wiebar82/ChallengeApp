@@ -1,35 +1,23 @@
-﻿int age = 33;
-string name = "Ewa";
-char sex = 'F';
+﻿int number = 55679999;
+string numberInString = number.ToString();
+char[] letters = numberInString.ToArray();
 
-if (sex == 'M')
+Console.WriteLine($"W liczbie " + number + " mamy następujące cyfry: ");
+for (int j = 0; j < 10; j++)
 {
-    if (age < 19)
+    int count = 0;
+    foreach (char letter in letters)
     {
-        Console.WriteLine("Mężczyza niepełnoletni.");
-    }
-    else 
-    { 
-        Console.WriteLine("Mężczyzna pełnoletni."); 
-    }
-}
-else
-{
-    if (age < 30)
-    {
-        Console.WriteLine("Kobieta poniżej 30.");
-    }
-    else
-    {
-        if (name == "Ewa" && age == 33)
+
+        int charInNumber = letter - '0';
+        if (charInNumber == j)
         {
-            Console.WriteLine("Hura! Jest z nami Ewa lat 33!");
+            count++;
         }
-        else
-        { 
-            Console.WriteLine("Inna kobieta powyżej 30-stki.");
-        }
+
     }
+    Console.WriteLine(j + "--->" + count);
+
 }
 
-Console.ReadLine();
+Console.ReadKey();
