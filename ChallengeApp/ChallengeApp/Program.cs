@@ -1,23 +1,43 @@
-﻿int num = 3988467;
+﻿using ChallengeApp;
 
-string numAsString = num.ToString();
-char[] letters = numAsString.ToArray();
+Employee employee1 = new Employee("Bartek", "Wiecz", 42);
+Employee employee2 = new Employee("Wojtek", "Kowa", 43);
+Employee employee3 = new Employee("Zdzis", "Nowak", 42);
 
-for (int i = 0; i <= 9; i++)
+
+employee1.AddPoints(5);
+employee1.AddPoints(2);
+employee1.AddPoints(9);
+employee1.AddPoints(5);
+employee1.AddPoints(7);
+
+employee2.AddPoints(8);
+employee2.AddPoints(6);
+employee2.AddPoints(9);
+employee2.AddPoints(8);
+employee2.AddPoints(7);
+
+employee3.AddPoints(0);
+employee3.AddPoints(0);
+employee3.AddPoints(0);
+employee3.AddPoints(0);
+employee3.AddPoints(0);
+
+List<Employee> employees = new List<Employee>()
 {
-    int count = 0;
+    employee1, employee2, employee3
+};
 
-    foreach (char letter in letters)
+int maxResult = -1;
+Employee employeeWithMaxResult = null;
+
+foreach (var employee in employees)
+{
+    if (employee.Result > maxResult)
     {
-
-        if (letter == char.Parse(i.ToString()))
-        {
-            count++;
-        }
-
+        employeeWithMaxResult = employee;
+        maxResult = employee.Result;
     }
-   
-    Console.WriteLine(i + " => " + count);
-
 }
 
+Console.WriteLine("Pracownikiem z najlepszym wynikiem jest: " + employeeWithMaxResult.FirstName + " " + employeeWithMaxResult.LastName);
