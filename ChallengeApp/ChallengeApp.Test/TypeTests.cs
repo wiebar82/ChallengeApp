@@ -11,8 +11,6 @@ namespace ChallengeApp.Test
             int num1 = 23;
             int num2 = 23;
 
-            // act
-
             // assert
             Assert.AreEqual(num1, num2);
         }
@@ -29,11 +27,11 @@ namespace ChallengeApp.Test
         }
 
         [Test]
-        public void TwoStringShouldbyNotEqual() 
+        public void TwoStringShouldbyNotEqual()
         {
             // arrange
-            string animal1= "kot";
-            string animal2= "pies";
+            string animal1 = "kot";
+            string animal2 = "pies";
 
             // assert
             Assert.AreNotEqual(animal1, animal2);
@@ -47,15 +45,13 @@ namespace ChallengeApp.Test
             var emp1 = GetEmployee("Bartek", "Wer", 45);
             var emp2 = GetEmployee("Wojtek", "NCT", 36);
 
-            // act
-            
             // assert
             Assert.AreNotEqual(emp1, emp2);
         }
 
-        private Employee GetEmployee(string name, string lastname,  int age)
+        private Employee GetEmployee(string name, string lastname, int age)
         {
-            return new Employee(name, lastname, age);   
+            return new Employee(name, lastname, age);
         }
     }
 }
