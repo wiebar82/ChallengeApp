@@ -76,5 +76,79 @@
             return statistics;
         }
 
+        public Statistics GetStatisticsWithFor()
+        {
+            var statistic = new Statistics();
+            statistic.Average = 0;
+            statistic.Max = float.MinValue;
+            statistic.Min = float.MaxValue;
+            
+            for (int index = 0;  index < this.grades.Count; index++)
+            {
+                if(statistic.Max < grades[index])
+                {
+                    statistic.Max = grades[index];
+                }
+                if(statistic.Min > grades[index])
+                {
+                    statistic.Min = grades[index];
+                }
+                statistic.Average += grades[index];
+            }
+           statistic.Average /= this.grades.Count;
+            return statistic;
+        }
+
+        public Statistics GetStatisticsWithWhile()
+        {
+            var statistic = new Statistics();
+            statistic.Average = 0;
+            statistic.Max = float.MinValue;
+            statistic.Min = float.MaxValue;
+            int index = 0;
+
+            while (index < this.grades.Count) 
+            {
+                if (statistic.Max < grades[index])
+                {
+                    statistic.Max = grades[index];
+                }
+                if (statistic.Min > grades[index])
+                {
+                    statistic.Min = grades[index];
+                }
+                statistic.Average += grades[index];
+                index++;
+            }
+            statistic.Average /= this.grades.Count;
+            return statistic;
+        }
+
+        public Statistics GetStatisticsWithDoWhile()
+        {
+            var statistic = new Statistics();
+            statistic.Average = 0;
+            statistic.Max = float.MinValue;
+            statistic.Min = float.MaxValue;
+            int index = 0;
+
+            do
+            {
+                if (statistic.Max < grades[index])
+                {
+                    statistic.Max = grades[index];
+                }
+                if (statistic.Min > grades[index])
+                {
+                    statistic.Min = grades[index];
+                }
+                statistic.Average += grades[index];
+                index++;
+            } while (index < this.grades.Count);
+
+            statistic.Average /= this.grades.Count;
+            return statistic;
+        }
+
     }
 }
