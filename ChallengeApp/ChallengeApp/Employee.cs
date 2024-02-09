@@ -22,7 +22,7 @@
             }
             else
             {
-                Console.WriteLine("Invalid grade value!");
+                throw new Exception("Invalid grade value!");
             }
         }
 
@@ -57,8 +57,7 @@
                         this.AddGrade(20);
                         break;
                     default:
-                        Console.WriteLine("String isn't correct! You may use: A,a,B,b,C,c,D,d,E,e or grade from 0 to 100");
-                        break;
+                        throw new Exception("String isn't correct! You may use: A,a,B,b,C,c,D,d,E,e or grade from 0 to 100");
                 }
             }
 
