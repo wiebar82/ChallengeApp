@@ -25,6 +25,7 @@
                 Console.WriteLine("Invalid grade value!");
             }
         }
+
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
@@ -33,40 +34,38 @@
             }
             else
             {
-                Console.WriteLine("String is not float");
+                switch (grade)
+                {
+                    case "A":
+                    case "a":
+                        this.grades.Add(100);
+                        break;
+                    case "B":
+                    case "b":
+                        this.grades.Add(80);
+                        break;
+                    case "C":
+                    case "c":
+                        this.AddGrade(60);
+                        break;
+                    case "D":
+                    case "d":
+                        this.AddGrade(40);
+                        break;
+                    case "E":
+                    case "e":
+                        this.AddGrade(20);
+                        break;
+                    default:
+                        Console.WriteLine("String isn't correct! You may use: A,a,B,b,C,c,D,d,E,e or grade from 0 to 100");
+                        break;
+                }
             }
+
         }
-    
-        public void AddGrade(char grade)
-        {
-           switch(grade) 
-            {
-                case 'A':
-                case 'a':
-                    this.grades.Add(100);
-                    break;
-                case 'B':
-                case 'b':
-                    this.grades.Add(80);
-                    break;
-                case 'C':
-                case 'c':
-                    this.AddGrade(60);
-                    break;
-                case 'D':
-                case 'd':
-                    this.AddGrade(40);
-                    break;
-                case 'E':
-                case 'e':
-                    this.AddGrade(20);
-                    break;
-                default:
-                    Console.WriteLine("Wrong letter.");
-                    break;
-            }
-        }
-      
+
+
+
         public Statistics GetStatistics()
         {
             var statistics = new Statistics();
@@ -83,10 +82,10 @@
 
             statistics.Average /= this.grades.Count;
 
-            switch(statistics.Average)
+            switch (statistics.Average)
             {
                 case var average when average >= 80:
-                    statistics.AverageLetter = 'A'; 
+                    statistics.AverageLetter = 'A';
                     break;
                 case var average when average >= 60:
                     statistics.AverageLetter = 'B';
@@ -104,7 +103,7 @@
             return statistics;
         }
 
-        
+
 
     }
 }
