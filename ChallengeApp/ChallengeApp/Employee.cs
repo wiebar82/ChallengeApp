@@ -38,11 +38,11 @@
                 {
                     case "A":
                     case "a":
-                        this.grades.Add(100);
+                        this.AddGrade(100);
                         break;
                     case "B":
                     case "b":
-                        this.grades.Add(80);
+                        this.AddGrade(80);
                         break;
                     case "C":
                     case "c":
