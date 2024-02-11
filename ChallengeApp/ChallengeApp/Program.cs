@@ -4,7 +4,7 @@ Console.WriteLine("Witamy w programie A-F do oceny Pracowników");
 Console.WriteLine("===========================================");
 Console.WriteLine();
 
-var employee = new Employee("Bartek", "Wie");
+var employee = new Employee("Bartek", "Wie", 'M');
 
 while (true)
 {
