@@ -11,7 +11,7 @@
             this.Sex = sex;
         }
 
-        public string FirstName {  get; private set; }
+        public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public char Sex { get; private set; }
 
@@ -28,43 +28,62 @@
             }
         }
 
+        public void AddGrade(double grade)
+        {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
+        }
+        public void AddGrade(int grade)
+        {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
+        }
+
+        public void AddGrade(char grade)
+        {
+            switch (grade)
+            {
+                case 'A':
+                case 'a':
+                    this.AddGrade(100);
+                    break;
+                case 'B':
+                case 'b':
+                    this.AddGrade(80);
+                    break;
+                case 'C':
+                case 'c':
+                    this.AddGrade(60);
+                    break;
+                case 'D':
+                case 'd':
+                    this.AddGrade(40);
+                    break;
+                case 'E':
+                case 'e':
+                    this.AddGrade(20);
+                    break;
+                default:
+                    throw new Exception("Sign isn't correct! You may use: A,a,B,b,C,c,D,d,E,e or grade from 0 to 100");
+            }
+
+        }
+
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
                 this.AddGrade(result);
             }
+            else if (char.TryParse(grade, out char resultInChar))
+            {
+                this.AddGrade(resultInChar);
+            }
             else
             {
-                switch (grade)
-                {
-                    case "A":
-                    case "a":
-                        this.AddGrade(100);
-                        break;
-                    case "B":
-                    case "b":
-                        this.AddGrade(80);
-                        break;
-                    case "C":
-                    case "c":
-                        this.AddGrade(60);
-                        break;
-                    case "D":
-                    case "d":
-                        this.AddGrade(40);
-                        break;
-                    case "E":
-                    case "e":
-                        this.AddGrade(20);
-                        break;
-                    default:
-                        throw new Exception("String isn't correct! You may use: A,a,B,b,C,c,D,d,E,e or grade from 0 to 100");
-                }
+                throw new Exception("Greade is not a number");
             }
-
         }
-
 
 
         public Statistics GetStatistics()
