@@ -6,6 +6,7 @@ Console.WriteLine();
 
 var employee = new EmployeeInFile("Bartek", "Wie", 'M');
 employee.AddGrade(0.75f);
+employee.AddGrade('a');
 //while (true)
 //{
 //    Console.WriteLine("Podaj ocenę pracownika: ");
@@ -23,13 +24,13 @@ employee.AddGrade(0.75f);
 //    {
 //        Console.WriteLine($"Exception catched: {ex.Message}");
 //    }
-    
+
 //}
 
-//var statistics = employee.GetStatistics();
-//Console.WriteLine($"Average: {statistics.Average:N2}");
-//Console.WriteLine($"Min: {statistics.Min}");
-//Console.WriteLine($"Max: {statistics.Max}");
-//Console.WriteLine($"Letter: {statistics.AverageLetter}");
+var statistics = employee.GetStatistics();
+Console.WriteLine($"Average: {statistics.Average:N2}");
+Console.WriteLine($"Min: {statistics.Min}");
+Console.WriteLine($"Max: {statistics.Max}");
+Console.WriteLine($"Letter: {statistics.AverageLetter}");
 
 
