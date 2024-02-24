@@ -5,8 +5,8 @@ Console.WriteLine("===========================================");
 Console.WriteLine();
 
 var employee = new EmployeeInFile("Bartek", "Wie", 'M');
-employee.AddGrade(0.75f);
-employee.AddGrade('a');
+//employee.AddGrade(0.75f);
+employee.AddGrade('m');
 //while (true)
 //{
 //    Console.WriteLine("Podaj ocenę pracownika: ");

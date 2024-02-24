@@ -1,4 +1,6 @@
-﻿namespace ChallengeApp
+﻿using System.Diagnostics;
+
+namespace ChallengeApp
 {
     public abstract class EmployeeBase : IEmployee
     {
@@ -16,12 +18,35 @@
 
         public abstract void AddGrade(char grade);
 
-        public abstract void AddGrade(double grade);
+        public virtual void AddGrade(double grade)
+        {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
+        }
 
-        public abstract void AddGrade(int grade);
+        public virtual void AddGrade(int grade)
+        {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
+        }
 
-        public abstract void AddGrade(string grade);
+        public virtual void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else if (char.TryParse(grade, out char resultInChar))
+            {
+                this.AddGrade(resultInChar);
+            }
+            else
+            {
+                throw new Exception("Greade is not a number");
+            }
+        }
 
         public abstract Statistics GetStatistics();
     }
 }
+

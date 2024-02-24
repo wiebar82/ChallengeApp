@@ -51,14 +51,12 @@
 
         public override void AddGrade(double grade)
         {
-            float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);
+           base.AddGrade(grade);
         }
 
         public override void AddGrade(int grade)
         {
-            float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);
+            base.AddGrade(grade);
         }
 
         public override void AddGrade(string grade)
