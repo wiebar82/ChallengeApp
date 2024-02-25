@@ -9,7 +9,6 @@ namespace ChallengeApp
             : base(firstName, lastName, sex)
         {
         }
-
         public override void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
@@ -25,7 +24,6 @@ namespace ChallengeApp
             }
             
         }
-
         public override void AddGrade(char grade)
         {
             try
@@ -62,7 +60,6 @@ namespace ChallengeApp
             }
             
         }
-
         public override void AddGrade(double grade)
         {
             base.AddGrade(grade);
@@ -134,3 +131,4 @@ namespace ChallengeApp
         }
     }
 }
+
