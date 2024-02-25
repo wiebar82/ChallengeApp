@@ -42,16 +42,16 @@ namespace ChallengeApp.Test
         {
 
             // arrange
-            var emp1 = GetEmployee("Bartek", "Wer", 45);
-            var emp2 = GetEmployee("Wojtek", "NCT", 36);
+            var emp1 = GetEmployee("Bartek", "Wer", 'm');
+            var emp2 = GetEmployee("Wojtek", "NCT", 'm');
 
             // assert
             Assert.AreNotEqual(emp1, emp2);
         }
 
-        private Employee GetEmployee(string name, string lastname, int age)
+        private EmployeeInMemory GetEmployee(string name, string lastname, char sex)
         {
-            return new Employee(name, lastname, age);
+            return new EmployeeInMemory(name, lastname, sex);
         }
     }
 }

@@ -6,7 +6,7 @@
         public void WhenGoToStatistic_ShouldReturnCorrectValue()
         {
             // arrange
-            var employee = new Employee("Bartus", "Niunius");
+            var employee = new EmployeeInMemory("Bartus", "Niunius", 'm');
             employee.AddGrade(7);
             employee.AddGrade(6.6f);
             employee.AddGrade(8);
@@ -23,7 +23,7 @@
         public void WhenAddLetterGrade_ShouldReturnValue()
         {
             // arrange
-            var employee = new Employee("Wojtus", "Nygus");
+            var employee = new EmployeeInMemory("Wojtus", "Nygus", 'm');
             employee.AddGrade('a');
             employee.AddGrade('b');
             employee.AddGrade('c');
