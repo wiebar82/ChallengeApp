@@ -65,28 +65,6 @@ namespace ChallengeApp
             }
             
         }
-        public override void AddGrade(double grade)
-        {
-            base.AddGrade(grade);
-        }
-
-        public override void AddGrade(int grade)
-        {
-           base.AddGrade(grade);
-        }
-
-        public override void AddGrade(string grade)
-        {
-            try
-            {
-                base.AddGrade(grade);
-            }
-            catch (Exception ex) 
-            { 
-                Console.WriteLine(ex.Message); 
-            }
-        }
-
         public override Statistics GetStatistics()
         {
             var result = new Statistics();

@@ -2,9 +2,7 @@
 {
     public class EmployeeInMemory : EmployeeBase
     {
-       // public delegate void GradeAddedDelegate(object sender, EventArgs args);
-       // public event GradeAddedDelegate GradeAdded;
-
+      
         private List<float> grades = new List<float>();
         public EmployeeInMemory(string firstName, string lastName, char sex) 
             : base(firstName, lastName, sex)
@@ -55,32 +53,6 @@
                     break;
                 default:
                     throw new Exception("Sign isn't correct! You may use: A,a,B,b,C,c,D,d,E,e or grade from 0 to 100");
-            }
-        }
-
-        public override void AddGrade(double grade)
-        {
-           base.AddGrade(grade);
-        }
-
-        public override void AddGrade(int grade)
-        {
-            base.AddGrade(grade);
-        }
-
-        public override void AddGrade(string grade)
-        {
-            if (float.TryParse(grade, out float result))
-            {
-                this.AddGrade(result);
-            }
-            else if (char.TryParse(grade, out char resultInChar))
-            {
-                this.AddGrade(resultInChar);
-            }
-            else
-            {
-                throw new Exception("Greade is not a number");
             }
         }
 
