@@ -9,7 +9,9 @@ namespace ChallengeApp
             : base(firstName, lastName, sex)
         {
         }
+
         public override event GradeAddedDelegate GradeAdded;
+
         public override void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
@@ -29,6 +31,7 @@ namespace ChallengeApp
             }
             
         }
+
         public override void AddGrade(char grade)
         {
             try
@@ -65,6 +68,7 @@ namespace ChallengeApp
             }
             
         }
+
         public override Statistics GetStatistics()
         {
             var result = new Statistics();

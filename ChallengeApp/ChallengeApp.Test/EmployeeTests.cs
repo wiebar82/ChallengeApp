@@ -19,6 +19,7 @@
             Assert.AreEqual(6.15f, statistics.Average);
             Assert.AreEqual('E', statistics.AverageLetter);
         }
+
         [Test]
         public void WhenAddLetterGrade_ShouldReturnValue()
         {

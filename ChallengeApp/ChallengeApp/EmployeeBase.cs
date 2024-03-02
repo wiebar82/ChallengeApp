@@ -12,8 +12,11 @@ namespace ChallengeApp
             this.LastName = lastName;
             this.Sex = sex;
         }
+
         public string FirstName { get; private set; }
+
         public string LastName { get; private set; }
+
         public char Sex { get; private set; }
 
         public abstract void AddGrade(float grade);
