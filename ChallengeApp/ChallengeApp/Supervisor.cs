@@ -9,6 +9,8 @@
 
         public char Sex => throw new NotImplementedException();
 
+        public event EmployeeBase.GradeAddedDelegate GradeAdded;
+
         public void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
